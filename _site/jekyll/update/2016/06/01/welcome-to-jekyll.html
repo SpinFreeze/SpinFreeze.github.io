@@ -1,0 +1,108 @@
+<div class="banner article-hd" style="background-color: #41b1c4">
+    <div class="wrap">
+        <div class="article-tt">React Native初探记录(一)</div>
+        <div class="article-date"><i class="icon iconfont">&#xe60e;</i><span>2016-06-999</span></div>
+    </div>
+</div>
+<div class="article-wrap wrap">
+    <div class="article-main"><p><code class="highlighter-rouge">ruby
+    # ...ruby code
+   </code></p>
+
+<p>ffffffffffff</p>
+
+<h2 id="hello">Hello</h2>
+
+<h1 id="id">H1 header</h1>
+
+<h2 id="id">H2 header</h2>
+
+<h3 id="id">H3 header</h3>
+
+<h4 id="id">H4 header</h4>
+
+<h5 id="id">H5 header</h5>
+
+<h6 id="id">H6 header</h6>
+
+<h1 id="first-level-header">First level header</h1>
+
+<h2 id="second-level-header">Second level header</h2>
+
+<p>This is a sample code block.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Continued here.
+</code></pre>
+</div>
+
+<blockquote>
+  <p>A sample blockquote.</p>
+
+  <blockquote>
+    <p>Nested blockquotes are
+also possible.</p>
+  </blockquote>
+
+  <h2 id="headers-work-too">Headers work too</h2>
+  <p>This is the outer quote again.</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nv">BUILDDIR</span>      <span class="o">=</span> _build
+<span class="nv">EXTRAS</span>       <span class="o">?=</span> <span class="nv">$(BUILDDIR)</span>/extras
+
+<span class="nl">.PHONY</span><span class="o">:</span> <span class="nf">main clean</span>
+
+<span class="nl">main</span><span class="o">:</span>
+	<span class="p">@</span><span class="nb">echo</span> <span class="s2">"Building main facility..."</span>
+	build_main <span class="nv">$(BUILDDIR)</span>
+
+<span class="nl">clean</span><span class="o">:</span>
+	rm -rf <span class="nv">$(BUILDDIR)</span>/<span class="k">*</span>
+
+</code></pre>
+</div>
+
+<dl>
+  <dt>term</dt>
+  <dd>definition</dd>
+  <dd>another definition</dd>
+  <dt>another term</dt>
+  <dt>and another term</dt>
+  <dd>and a definition for the term</dd>
+</dl>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+| Header1 | Header2 | Header3 |
+|:--------|:-------:|--------:|
+| cell1   | cell2   | cell3   |
+| cell4   | cell5   | cell6   |
+|----
+| cell1   | cell2   | cell3   |
+| cell4   | cell5   | cell6   |
+|=====
+| Foot1   | Foot2   | Foot3
+{: rules="groups"}
+</code></pre>
+</div>
+</div>
+</div>
+<link rel="stylesheet" href="/public/css/atelier-lakeside-light.css">
+<script src="/public/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+    $(function(){
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+        isIndex=false;
+        $('.article-main').css({
+            display:'none',
+            opacity:0
+        });
+        setTimeout(function(){
+            $('.article-main').css('display','block');
+            $('.article-main').css({animation:'1s listEl forwards'});
+        },800)
+    });
+
+</script>

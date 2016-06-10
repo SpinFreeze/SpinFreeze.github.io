@@ -1,0 +1,61 @@
+#首页关注的库
+rep:
+  -
+    name: jQuery
+    des: 持续关注JQuery,解放前端提高效率的js库
+    link: https://github.com/jquery/jquery
+    imgsrc: /public/img/jquery.jpg
+
+  -
+    name: Nodejs
+    des: 前端工程师入侵后端之路.
+    link: https://github.com/nodejs/node
+    imgsrc: /public/img/Chipmunk.jpg
+
+  -
+    name: Cocos2d-X/Cocos2d-JS
+    des: 游戏开发引擎，最近一直在用学 C++和JS均有涉及
+    link: https://github.com/cocos2d/cocos2d-js
+    imgsrc: public/img/cocos.jpg
+
+  -
+    name: React-Native
+    des: 大前端统一安卓IOS移动端
+    link: http://facebook.github.io/react-native/
+    imgsrc: /public/img/react.jpg
+
+  -
+    name: Chipmunk2D
+    des: Cocos2d-js对Box2d支持度实在无力吐槽  Chipmunk2D轻量级友好的 物理2D引擎
+    link: https://github.com/slembcke/Chipmunk2D
+    imgsrc: /public/img/Chipmunk.jpg
+
+#首页导航配置
+navs:
+  -
+    href: contact/ajaxIndex.html
+    label: Home
+
+  -
+    href: contact/ajaxMyOpenSoure.html      # /open-source
+    label: Open-Source
+
+  -
+    href: contact/ajaxBlog.html
+    label: Blog
+
+  -
+    href:       # /bookmark
+    label: Bookmark
+
+  -
+    href:       # /about
+    label: About
+
+#我的开源项目
+openSource:
+    -
+      name: 暂时没有哦
+      des: 暂时没有哦
+      link: https://github.com/cocos2d/cocos2d-js
+      imgsrc: public/img/cocos.jpg

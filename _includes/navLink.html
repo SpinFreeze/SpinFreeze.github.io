@@ -1,0 +1,8 @@
+<ul class="nav">
+    {% for nav in site.data.repositor.navs %}
+    <li class="hideEl"><a href="javascript:;" onclick="runPage('{{nav.href}}')">{{nav.label}}</a></li>
+    {% endfor %}
+</ul>
+
+
+

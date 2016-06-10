@@ -1,0 +1,47 @@
+---
+layout:
+---
+<div class="banner article-hd" style="background-color: #41b1c4">
+    <div class="wrap">
+        <div class="article-tt">Blog</div>
+        <div class="article-date"><i class="icon iconfont">&#xe60e;</i><span>Created By 2016-06-06</span></div>
+    </div>
+</div>
+<section class="time-line wrap">
+    <div class="timeYear">2016</div>
+    <div class="line"></div>
+
+    <ul class="article-list">
+        {% for post in site.posts %}
+            {% assign tt = forloop.index|modulo:2 %}
+            <li class="row {% if tt != 0 %}rt {% else %}lt{% endif %}">
+                <div class="dot"></div>
+                <div class="inner">
+                    <div class="hd-tt" onclick="runPage('{{ post.url }}')">{{ post.title }}</div>
+                    <div class="text" onclick="runPage('{{ post.url }}')">{{ post.describe }}</div>
+                    <div class="date"><i class="icon iconfont">&#xe60e;</i><span>{{ post.articleDate3 }}</span></div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+<script>
+var isIndex=false;
+$(function(){
+    setTimeout(function(){
+        for(var i=0;i<$('.article-list li').length;i++){
+            $('.article-list li').eq(i).css({animation:'1s '+(0.6+i*0.1)+'s listEl forwards'})
+        }
+        $('.article-list li').eq($('.article-list li').length-1).get(0).addEventListener("webkitAnimationEnd", function(){
+            $('.article-list li').css('opacity','1');
+            $('.article-list li').css({animation:'none'})
+        });
+        $('.time-line .timeYear').css({
+            'transform':'scale(1)',
+            opacity:1
+        });
+        $('.time-line .line').animate({opacity:1},2000);
+    },1000);
+});
+</script>
+

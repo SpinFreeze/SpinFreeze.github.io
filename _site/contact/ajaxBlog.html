@@ -1,0 +1,104 @@
+<div class="banner article-hd" style="background-color: #41b1c4">
+    <div class="wrap">
+        <div class="article-tt">Blog</div>
+        <div class="article-date"><i class="icon iconfont">&#xe60e;</i><span>Created By 2016-06-06</span></div>
+    </div>
+</div>
+<section class="time-line wrap">
+    <div class="timeYear">2016</div>
+    <div class="line"></div>
+
+    <ul class="article-list">
+        
+            
+            <li class="row rt ">
+                <div class="dot"></div>
+                <div class="inner">
+                    <div class="hd-tt" onclick="runPage('/jekyll/update/2016/06/07/welcome-to-jekyll.html')">React Native初探记录(一)</div>
+                    <div class="text" onclick="runPage('/jekyll/update/2016/06/07/welcome-to-jekyll.html')">You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes.</div>
+                    <div class="date"><i class="icon iconfont">&#xe60e;</i><span>2016-06-03</span></div>
+                </div>
+            </li>
+        
+            
+            <li class="row lt">
+                <div class="dot"></div>
+                <div class="inner">
+                    <div class="hd-tt" onclick="runPage('/jekyll/update/2016/06/06/welcome-to-jekyll.html')">React Native初探记录(一)</div>
+                    <div class="text" onclick="runPage('/jekyll/update/2016/06/06/welcome-to-jekyll.html')">You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes.</div>
+                    <div class="date"><i class="icon iconfont">&#xe60e;</i><span>2016-06-03</span></div>
+                </div>
+            </li>
+        
+            
+            <li class="row rt ">
+                <div class="dot"></div>
+                <div class="inner">
+                    <div class="hd-tt" onclick="runPage('/jekyll/update/2016/06/05/welcome-to-jekyll.html')">React Native初探记录(一)</div>
+                    <div class="text" onclick="runPage('/jekyll/update/2016/06/05/welcome-to-jekyll.html')">You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes.</div>
+                    <div class="date"><i class="icon iconfont">&#xe60e;</i><span>2016-06-03</span></div>
+                </div>
+            </li>
+        
+            
+            <li class="row lt">
+                <div class="dot"></div>
+                <div class="inner">
+                    <div class="hd-tt" onclick="runPage('/jekyll/update/2016/06/04/welcome-to-jekyll.html')">React Native初探记录(一)</div>
+                    <div class="text" onclick="runPage('/jekyll/update/2016/06/04/welcome-to-jekyll.html')">You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes.</div>
+                    <div class="date"><i class="icon iconfont">&#xe60e;</i><span>2016-06-03</span></div>
+                </div>
+            </li>
+        
+            
+            <li class="row rt ">
+                <div class="dot"></div>
+                <div class="inner">
+                    <div class="hd-tt" onclick="runPage('/jekyll/update/2016/06/03/welcome-to-jekyll.html')">React Native初探记录(一)</div>
+                    <div class="text" onclick="runPage('/jekyll/update/2016/06/03/welcome-to-jekyll.html')">You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes.</div>
+                    <div class="date"><i class="icon iconfont">&#xe60e;</i><span>2016-06-03</span></div>
+                </div>
+            </li>
+        
+            
+            <li class="row lt">
+                <div class="dot"></div>
+                <div class="inner">
+                    <div class="hd-tt" onclick="runPage('/jekyll/update/2016/06/02/welcome-to-jekyll.html')">React Native初探记录(一)</div>
+                    <div class="text" onclick="runPage('/jekyll/update/2016/06/02/welcome-to-jekyll.html')">You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes.</div>
+                    <div class="date"><i class="icon iconfont">&#xe60e;</i><span>2016-06-03</span></div>
+                </div>
+            </li>
+        
+            
+            <li class="row rt ">
+                <div class="dot"></div>
+                <div class="inner">
+                    <div class="hd-tt" onclick="runPage('/jekyll/update/2016/06/01/welcome-to-jekyll.html')">React Native初探记录(一)</div>
+                    <div class="text" onclick="runPage('/jekyll/update/2016/06/01/welcome-to-jekyll.html')">You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes.</div>
+                    <div class="date"><i class="icon iconfont">&#xe60e;</i><span>2016-06-999</span></div>
+                </div>
+            </li>
+        
+    </ul>
+</section>
+<script>
+var isIndex=false;
+$(function(){
+    setTimeout(function(){
+        for(var i=0;i<$('.article-list li').length;i++){
+            $('.article-list li').eq(i).css({animation:'1s '+(0.6+i*0.1)+'s listEl forwards'})
+        }
+        $('.article-list li').eq($('.article-list li').length-1).get(0).addEventListener("webkitAnimationEnd", function(){
+            $('.article-list li').css('opacity','1');
+            $('.article-list li').css({animation:'none'})
+        });
+        $('.time-line .timeYear').css({
+            'transform':'scale(1)',
+            opacity:1
+        });
+        $('.time-line .line').animate({opacity:1},2000);
+    },1000);
+});
+</script>
+

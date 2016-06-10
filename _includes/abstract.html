@@ -1,0 +1,69 @@
+{% include indexbaner.html %}
+<div class="main wrap">
+    <!-- 文章列表 -->
+    <div class="inner-left">
+        <ul class="main-list">
+            {% for post in site.posts %}
+            <li class="row">
+                <h3><a href="javascript:;" onclick="runPage('{{ post.url }}')" >{{ post.title }}</a></h3>
+                <div class="text-des">{{ post.describe }}</div>
+                <p class="date"><i class="icon iconfont">&#xe60e;</i> <span>{{ post.articleDate3 }}</span></p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- 我关注的库 my attention of repositories -->
+    <div class="repositories-right">
+        <div class="repositories-tt">My Attention Of Repositories</div>
+        <ul class="list">
+            {% for rep in site.data.repositor.rep %}
+            <li class="column">
+                <div class="tt">
+                    <img class="markImg" src="{{rep.imgsrc}}" alt="">
+                    <a href="{{rep.link}}">{{rep.name}}</a>
+                </div>
+                <p class="des">{{rep.des}}</p>
+                <div class="url">{{rep.link}}</div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<script>
+    //
+$(function(){
+    $('.nav-wrap').css({
+        animation:'1s showAnimate'
+    });
+    $('.repositories-tt').hide();
+    $('.repositories-right .list li').css('display','none');
+    setTimeout(function(){
+        $('.nav-wrap .logo-wrap').css({animation:'0.6s showNav forwards'});
+
+        $('.banner .about-me').css({animation:'1s .8s showMe forwards'});
+        for(var i=0;i<$('.nav li').length;i++){
+            $('.nav li').eq(i).css({animation:'1s '+(0.5+i/10)+'s showEl forwards'});
+        }
+        $('.repositories-tt').fadeIn(1000);
+    },600);
+
+    setTimeout(function(){
+        for(var i=0;i<$('.main-list li').length;i++){
+            $('.main-list li').eq(i).css({animation:'1s '+(0.6+i*0.1)+'s listEl forwards'})
+        }
+    },1000);
+
+    //右侧列表
+    setTimeout(function(){
+        $('.repositories-right .list li').css('display','block');
+        for(var i=0;i<$('.repositories-right .list li').length;i++){
+            $('.repositories-right .list li').eq(i).css({animation:'1s '+(0.8+i*0.1)+'s listEl2 forwards'});
+            $('.repositories-right .list li').eq(i).get(0).addEventListener("webkitAnimationEnd", function(){ //动画结束时事件
+                $(this).css({opacity:1});
+                $(this).css({animation:'none'});
+            }, false);
+        }
+    },1500);
+});
+</script>
