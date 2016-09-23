@@ -1,16 +1,66 @@
 <div class="banner article-hd" style="background-color: #41b1c4">
     <div class="wrap">
-        <div class="article-tt">React Native初探记录(一)</div>
+        <div class="article-tt">Redis学习</div>
         <div class="article-date"><i class="icon iconfont">&#xe60e;</i><span>2016-06-03</span></div>
     </div>
 </div>
 <div class="article-wrap wrap">
-    <div class="article-main"><p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+    <div class="article-main"><h1 id="redis">为什么使用Redis</h1>
+<ol>
+  <li>从内存高速读取数据</li>
+  <li>减轻数据库负担</li>
+  <li>集合计算功能</li>
+  <li>多种数据结构的支持</li>
+</ol>
 
-<p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<h1 id="section">基本工具</h1>
+<ul>
+  <li>reids-server   手动启动redis</li>
+  <li>
+    <p>vim /etc/redis.conf  (我的mac是在vim /usr/local/etc/redis.conf)
+  搜索daemonize 修改 deamonize修改为yes  自动启动服务
+  搜索破prot 修改端口号</p>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+    <table>
+      <tbody>
+        <tr>
+          <td>ps aux</td>
+          <td>grep redis 筛选redis查看是否启动</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
 
+<p>Redis 支持的数据类型
+    Key:Values</p>
+
+<p>基本命令
+    kyes *  查看所有存储的key
+    set [key] [value] 存入键值对
+    get [key] 获取key的value</p>
+
+<p>kyes键操作
+    exists key          测试制定的key是否存在
+    del key1 key2 …   删除制定的key
+    type key            返回给定的key的value类型
+    keys  pattern       返回匹配制定模式的所有key
+    randomkey           返回当前数据库中随机一个key
+    rename oldkey newkey改名字
+    dbsize              返回当前数据库的key数量
+    expire key seconds  为key指定过期时间
+    ttl key             返回 key 的剩余过期秒数
+    select db-index     选择数据库
+    move key db-index   将key从当前数据移动到指定数据库
+    flushdb             删除当前数据库中所有key
+    flushall            删除所有数据库中所有 key</p>
+
+<h1 id="string">数据类型 String</h1>
+<blockquote>
+  <p>String是redis最基本的数据类型
+redis的string可以包含任何数据。包括jpg图片或者序列化对象。单个value最大上限制是1G字节
+如果只使用String类型,redis就可以被看作持久化特性的memchahe</p>
+</blockquote>
 </div>
 </div>
 <link rel="stylesheet" href="/public/css/atelier-lakeside-light.css">
@@ -29,7 +79,8 @@
         setTimeout(function(){
             $('.article-main').css('display','block');
             $('.article-main').css({animation:'1s listEl forwards'});
-        },800)
+        },800);
+
     });
 
 </script>

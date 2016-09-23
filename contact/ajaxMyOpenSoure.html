@@ -91,7 +91,11 @@ $(function(){
             $('.myOpen-list li').eq(i).css({animation:'1s '+(0.6+i*0.1)+'s listEl2'});
             $('.myOpen-list li').eq(i).get(0).addEventListener("webkitAnimationEnd", function(){ //动画结束时事件
                 $('.myOpen-list li').css({opacity:1});
-                $('.myOpen-list li').css({animation:' '});
+                $('.myOpen-list li').css({animation:'none'});
+            }, false);
+            $('.myOpen-list li').eq(i).get(0).addEventListener("animationend", function(){ //动画结束时事件
+                $('.myOpen-list li').css({opacity:1});
+                $('.myOpen-list li').css({animation:'none'});
             }, false);
         }
     },1000);

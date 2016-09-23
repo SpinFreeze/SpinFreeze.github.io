@@ -1,16 +1,46 @@
 <div class="banner article-hd" style="background-color: #41b1c4">
     <div class="wrap">
-        <div class="article-tt">React Native初探记录(一)</div>
+        <div class="article-tt">前端性能优化</div>
         <div class="article-date"><i class="icon iconfont">&#xe60e;</i><span>2016-06-03</span></div>
     </div>
 </div>
 <div class="article-wrap wrap">
-    <div class="article-main"><p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+    <div class="article-main"><blockquote>
+  <h1 id="section">页面渲染</h1>
+</blockquote>
 
-<p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<blockquote>
+  <h3 id="section-1">页面渲染过程分为3个步骤</h3>
+</blockquote>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<blockquote>
+  <ol>
+    <li>HTML资源请求</li>
+    <li>HTML文档解析</li>
+    <li>浏览器文档解析</li>
+  </ol>
+</blockquote>
 
+<h1 id="html">HTML文档下载会经历一下步骤</h1>
+<p>首先在访问网址时html加载页面时会把HTML文档缓存到本地, 其中包括啊一些图片资源,连接资源 link-&gt;css  src-&gt;javascript 和一些 .mp3 mp4之类的音频和视频资源.项目中应尽量减少外部资源的引用,外部资源存在很多不然可能控因素,
+比如:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;script src='https://code.jquery.com/jquery-3.1.0.js'&gt;&lt;/script&gt;
+</code></pre>
+</div>
+
+<p>加载了一个JQ官网的外部资源,如果在加载过程中网速过慢,这个资源会一直占用这个下载通道,阻塞其它资源的加载。如果外部资源加载失败会导致有依赖关系的JS报错或者是页面渲染失败。</p>
+
+<blockquote>
+  <h3 id="html-1">HTML文档解析</h3>
+</blockquote>
+
+<blockquote>
+  <p>在HTML资源请求完毕后,浏览器会开始执行HTML文档解析,生成HTML页面结构DOM树(DOM树只是页面结构,并不渲染页面)。
+DOM树结构生成完毕后,浏览器会开始生成rander树,rander树会开始绘制我们所见的页面。rander生成之后,会开始逐级解析dom树,dom树逐级解析过程中开始加载引用资源,如:link、javascript、img等资源。
+页面尽量减少页面的reflow。link-&gt;css这类资源加载,标签元素每发生一像素的位置偏就造成reflow(页面回流)。reflow会重新开始渲染rander树。
+javascirpt绘制dom节点时会阻塞其它标签的解析、甚至下载.比如js通过  document.write写入的外部连接会阻塞其它JS的执行,还会占用资源下载通道。下载通道在页面加载时特别宝贵,当我访问一个网站时浏览器会开始拉取网站的信息,下载通道开始加载连接资源。如果下载通道被阻塞会影响资源的加载速度,视浏览器不同提供的下载通道也不同,比如chrome可以提供7条下载通道 firefox提供5条下载通道,而早年的IE只有2条下砸通道。</p>
+</blockquote>
 </div>
 </div>
 <link rel="stylesheet" href="/public/css/atelier-lakeside-light.css">
@@ -29,7 +59,8 @@
         setTimeout(function(){
             $('.article-main').css('display','block');
             $('.article-main').css({animation:'1s listEl forwards'});
-        },800)
+        },800);
+
     });
 
 </script>
